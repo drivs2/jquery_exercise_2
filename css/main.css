@@ -39,6 +39,10 @@ ul.nav-bar, li {
 	padding: 4em 0 0 0;
 }
 
+.underline{
+	  border-bottom: 1px solid gray;
+}
+
 h2.welcome-text {
 	color: black;
 }

@@ -1,12 +1,33 @@
-//this is where you define your functions
-
-// this is the syntax for defining a function:
-function functionName(parameters) {
-  //logic goes inside here
+function addUnderline($element) {
+$element.addClass('underline');
 }
 
+function removeSiblingUnderline($element) {
+var $current = $element;
+
+var $parent = $element.parent();
+console.log($parent);
+
+var $siblings = $parent.siblings();
+console.log('this are siblings',$siblings);
+
+
+$siblings.children().removeClass('underline');
+}
 
 $(document).ready(function() {
-  // this is where you put your event listeners
+
+$("img.welcome-text").hide();
+
+$( "#showr" ).click(function() {
+ $( "img.welcome-text" ).toggle();
+ $( "p.active" ).toggle();
+});
+
+
+$('.nav-link').click(function() {
+ removeSiblingUnderline($(this));
+ addUnderline($(this));
+});
 
 });
